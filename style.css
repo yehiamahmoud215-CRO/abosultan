@@ -1,0 +1,132 @@
+:root {
+    --primary-color: #0f2027; 
+    --secondary-color: #d4af37; 
+    --accent-color: #203a43; 
+    --text-color: #333333;
+    --bg-light: #f8f9fa;
+    --white: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* شريط التنقل */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 5%; background-color: var(--white);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    position: sticky; top: 0; z-index: 1000;
+}
+.logo { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.2; }
+.logo-top { font-size: 1.8rem; font-weight: 800; color: var(--secondary-color); }
+.logo-bottom { font-size: 1rem; font-weight: 700; color: var(--primary-color); }
+
+.nav-links { list-style: none; display: flex; gap: 25px; }
+.nav-links a { font-weight: 700; transition: color 0.3s ease; font-size: 1.1rem; }
+.nav-links a:hover { color: var(--secondary-color); }
+
+.btn-whatsapp {
+    background: linear-gradient(45deg, #25D366, #128C7E);
+    color: white; padding: 10px 25px; border-radius: 30px; font-weight: bold;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3); transition: transform 0.3s ease;
+}
+.btn-whatsapp:hover { transform: scale(1.05); }
+
+/* الهيرو (الصفحة الرئيسية) */
+.hero {
+    background: linear-gradient(rgba(15, 32, 39, 0.85), rgba(32, 58, 67, 0.85)), url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3') center/cover;
+    height: 85vh; display: flex; align-items: center; justify-content: center;
+    text-align: center; color: var(--white); padding: 0 20px;
+}
+.hero-title-main { font-size: 4.5rem; color: var(--secondary-color); margin-bottom: 5px; font-weight: 800; }
+.hero-title-sub { font-size: 2.5rem; color: var(--white); margin-bottom: 25px; font-weight: 700; }
+.hero p { font-size: 1.3rem; margin-bottom: 40px; opacity: 0.9; }
+
+.btn-primary {
+    background: linear-gradient(45deg, var(--secondary-color), #b5952f);
+    color: var(--primary-color); padding: 15px 35px; border-radius: 30px;
+    font-weight: 800; font-size: 1.2rem; border: none; cursor: pointer;
+    transition: all 0.3s ease; display: inline-block;
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(212, 175, 55, 0.6); }
+
+/* الأقسام والعروض */
+.services-section, .offers-section { padding: 100px 5%; background-color: var(--bg-light); text-align: center; }
+.section-title { margin-bottom: 60px; }
+.section-title h2 { font-size: 2.8rem; color: var(--primary-color); margin-bottom: 15px; }
+
+.services-grid, .offers-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px;
+}
+
+.service-card, .offer-card {
+    background: var(--white); border-radius: 15px; overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08); transition: all 0.4s ease;
+    border-bottom: 5px solid var(--secondary-color); display: flex; flex-direction: column; text-align: right;
+}
+.service-card:hover, .offer-card:hover { transform: translateY(-15px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+.service-card img, .offer-card img { width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s ease; }
+.service-card:hover img { transform: scale(1.08); }
+
+.card-content, .offer-details { padding: 30px 20px; display: flex; flex-direction: column; flex-grow: 1; }
+.card-content h3 { color: var(--primary-color); margin-bottom: 15px; font-size: 1.5rem; font-weight: 800; }
+.card-content p { margin-bottom: 25px; color: #555; flex-grow: 1; }
+
+.btn-outline {
+    display: inline-block; background: transparent; border: 2px solid var(--primary-color);
+    color: var(--primary-color); padding: 10px 25px; border-radius: 30px;
+    font-weight: bold; cursor: pointer; transition: all 0.3s ease; text-align: center;
+}
+.btn-outline:hover { background: var(--primary-color); color: var(--secondary-color); border-color: var(--primary-color); }
+
+/* تصميم تفاصيل العروض في الصفحات الفرعية */
+.page-header { background: linear-gradient(rgba(15, 32, 39, 0.9), rgba(32, 58, 67, 0.9)); padding: 80px 20px; text-align: center; color: white; }
+.page-header h1 { font-size: 3rem; color: var(--secondary-color); margin-bottom: 10px; }
+.offer-price { font-size: 1.6rem; font-weight: 800; color: var(--secondary-color); margin-bottom: 10px; background: var(--primary-color); display: inline-block; padding: 5px 15px; border-radius: 8px; }
+.offer-title { font-size: 1.4rem; color: var(--primary-color); margin-bottom: 15px; font-weight: 800; }
+.offer-desc { color: #666; margin-bottom: 15px; font-size: 1rem; line-height: 1.5; }
+.listing-details { list-style: none; padding: 0; margin-bottom: 20px; }
+.listing-details li { margin-bottom: 10px; padding-right: 25px; position: relative; color: #444; }
+.listing-details li::before { content: '🔹'; position: absolute; right: 0; top: 2px; font-size: 0.9em; }
+.listing-section-title { color: var(--primary-color); font-size: 1.1rem; margin: 15px 0 10px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+.full-width { display: block; width: 100%; text-align: center; padding: 15px; margin-top: auto; }
+
+/* الإحصائيات والتواصل */
+.about-section { display: flex; flex-wrap: wrap; align-items: center; padding: 100px 5%; gap: 60px; }
+.about-content { flex: 1; min-width: 300px; }
+.about-content h2 { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px; }
+.stats-grid { flex: 1; min-width: 300px; display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+.stat-item { background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); color: var(--white); padding: 40px 20px; border-radius: 15px; text-align: center; }
+.stat-item h3 { color: var(--secondary-color); font-size: 3rem; margin-bottom: 10px; }
+
+.contact-section { padding: 100px 5%; background: linear-gradient(rgba(15, 32, 39, 0.95), rgba(15, 32, 39, 0.95)); text-align: center; color: white; }
+.btn-whatsapp-large { display: inline-block; background: linear-gradient(45deg, #25D366, #128C7E); color: white; padding: 18px 50px; border-radius: 30px; font-weight: bold; font-size: 1.3rem; margin-top: 30px; }
+
+/* التذييل Footer */
+footer { background-color: #081115; color: #ccc; padding: 60px 5% 20px; }
+.footer-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+.footer-col h3 { color: var(--secondary-color); margin-bottom: 25px; font-size: 1.3rem; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 15px; }
+.footer-col ul li a:hover { color: var(--secondary-color); }
+.footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; }
+
+.reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero-title-main { font-size: 3rem; }
+    .hero-title-sub { font-size: 1.8rem; }
+    .about-section { flex-direction: column; text-align: center; }
+    .logo-top { font-size: 1.5rem; }
+}
